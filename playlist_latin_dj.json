@@ -1,0 +1,28 @@
+Last login: Thu Jun 18 03:28:53 on ttys000
+--- BIENVENIDO AL DISTRITO 110: MODO CREATIVO ACTIVADO ---
+DALILA/	J02/	LAIA/	SIBILA/	aisha/
+/Users/usuario/.zshrc:cd:6: no such file or directory: /Users/usuario/Documents/110_UNICORNS
+usuario@Scifii 110_UNICORNS % {
+  "playlist_id": "ytm_PLfH6E8CyLWtyZtkoOu73T2RNcVSTmFRGx",
+  "title": "Latin DJ Personal Set",
+  "quadrant": "Red_Fire",
+  "bpm_range": "110-130",
+  "total_tracks": 3,
+  "tracks": [
+    {
+      "title": "Despacito (Remix)",
+      "artist": "Luis Fonsi & Daddy Yankee",
+      "video_id": "FdMG84qN_98"
+    },
+    {
+      "title": "Con Calma (Remix)",
+      "artist": "Daddy Yankee & Katy Perry",
+      "video_id": "D3kq8qKjSmU"
+    },
+    {
+      "title": "Pepas (Tiësto Remix)",
+      "artist": "Farruko & Tiësto",
+      "video_id": "yBSH4NocOwM"
+    }
+  ]
+}
