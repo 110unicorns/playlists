@@ -1,8 +1,8 @@
-// Estructura de datos unificada: Playlists del Distrito 110
+// Estructura de datos unificada: Playlists del Distrito 110 (100% Monocromático Azul)
 const playlistData = {
   "project_metadata": {
     "project_name": "Distrito_110_Playlists",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "last_updated": "2026-06-22"
   },
   "playlists": [
@@ -18,7 +18,7 @@ const playlistData = {
     {
       "id": "playlist_002",
       "title": "Frecuencias Mito",
-      "quadrant": "Mito-Blanco",
+      "quadrant": "Agua-Azul",
       "description": "Ambientes relajantes, música orgánica, fractales y pasajes acústicos.",
       "icon": "🌲",
       "accent_color": "#66fcf1",
@@ -27,7 +27,7 @@ const playlistData = {
     {
       "id": "playlist_003",
       "title": "Fuego Puro",
-      "quadrant": "Fuego-Rojo",
+      "quadrant": "Agua-Azul",
       "description": "Ritmos intensos, guitarras pesadas, impulsos Tesla y pura energía.",
       "icon": "🔥",
       "accent_color": "#66fcf1",
@@ -36,7 +36,7 @@ const playlistData = {
     {
       "id": "playlist_004",
       "title": "Latin DJ Personal Set",
-      "quadrant": "Fuego-Rojo",
+      "quadrant": "Agua-Azul",
       "description": "Set personal de mezcla (110-130 BPM). Incluye tracks de Farruko, Tiësto y Daddy Yankee.",
       "icon": "🎛️",
       "accent_color": "#66fcf1",
