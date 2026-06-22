@@ -1,228 +1,138 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    body {background-color: #000000}
-    li.li1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #ffffff; -webkit-text-stroke: #ffffff}
-    li.li2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #ffffff; -webkit-text-stroke: #ffffff; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-    ul.ul1 {list-style-type: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists | Distrito 110</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --text-color: #c5c6c7;
+            --main-accent: #66fcf1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 2.3rem;
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: var(--main-accent);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .playlist-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .playlist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .cover-art {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(135deg, #151a21, #000000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            position: relative;
+        }
+
+        .quadrant-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .playlist-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .playlist-title {
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            font-size: 1.3rem;
+        }
+
+        .playlist-desc {
+            font-size: 0.9rem;
+            color: #a4a7ab;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        .btn-open {
+            display: block;
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<ul class="ul1">
-  <li class="li1"><span class="s1"><span class="Apple-converted-space"> </span>- Farruko &amp; Tiësto&lt;!DOCTYPE html&gt;</span></li>
-  <li class="li1"><span class="s1">&lt;html lang="es"&gt;</span></li>
-  <li class="li1"><span class="s1">&lt;head&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Playlists | Distrito 110&lt;/title&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>:root {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>--bg-color: #0b0c10;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>--card-bg: #1f2833;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>--text-color: #c5c6c7;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>--main-accent: #66fcf1;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--text-color);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>header {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 1200px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--card-bg);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>padding-bottom: 20px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>h1 {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>color: #ffffff;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 2.3rem;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>h1 span {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--main-accent);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.grid-container {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>display: grid;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>gap: 25px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 1200px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.playlist-card {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--card-bg);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 12px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid transparent;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: space-between;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.playlist-card:hover {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.cover-art {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>aspect-ratio: 1 / 1;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #151a21, #000000);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 4.5rem;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.quadrant-tag {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>top: 12px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>right: 12px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>background: rgba(0, 0, 0, 0.7);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 4px 10px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 12px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>letter-spacing: 0.5px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.1);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.playlist-info {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>flex-grow: 1;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: space-between;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.playlist-title {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>color: #ffffff;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0 0 8px 0;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.playlist-desc {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>color: #a4a7ab;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0 0 20px 0;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.4;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>.btn-open {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: transparent;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 25px;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>text-decoration: none;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></li>
-  <li class="li1"><span class="s1">&lt;/head&gt;</span></li>
-  <li class="li1"><span class="s1">&lt;body&gt;</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Distrito 110 // &lt;span&gt;Playlists&lt;/span&gt;&lt;/h1&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="grid-container" id="playlist-grid"&gt;&lt;/div&gt;</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>// Tus datos estructurados (Tu JSON local real)</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>const data = {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">          </span>"playlists": [</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"id": "playlist_001",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"title": "Cyberpunk Beats",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"quadrant": "Agua-Azul",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"description": "Darksynth, Neon y Retrowave para codear a 60 FPS en el chasis.",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"icon": "🎵",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"accent_color": "#66fcf1",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"url": "#"</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"id": "playlist_002",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"title": "Frecuencias Mito",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"quadrant": "Mito-Blanco",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"description": "Ambientes relajantes, música orgánica, fractales y pasajes acústicos.",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"icon": "🌲",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"accent_color": "#ffffff",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"url": "#"</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"id": "playlist_003",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"title": "Fuego Puro",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"quadrant": "Fuego-Rojo",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"description": "Ritmos intensos, guitarras pesadas, impulsos Tesla y pura energía.",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"icon": "🔥",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"accent_color": "#ff3333",</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">              </span>"url": "#"</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">          </span>]</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>const grid = document.getElementById('playlist-grid');</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>// Renderizado dinámico autoejecutable</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>data.playlists.forEach(playlist =&gt; {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>const card = document.createElement('div');</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>card.className = 'playlist-card';</span></li>
-  <li class="li2"><span class="s1"><span class="Apple-converted-space">            </span></span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>// Lógica de iluminación interactiva por color de cuadrante</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>card.addEventListener('mouseenter', () =&gt; {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                </span>card.style.borderColor = playlist.accent_color;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                </span>card.style.boxShadow = `0 10px 20px ${playlist.accent_color}1e`;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>card.addEventListener('mouseleave', () =&gt; {</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                </span>card.style.borderColor = 'transparent';</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                </span>card.style.boxShadow = 'none';</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></li>
-  <li class="li2"><span class="s1"></span><br></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>card.innerHTML = `</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="cover-art"&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span class="quadrant-tag" style="color: ${playlist.accent_color}; border-color: ${playlist.accent_color}44;"&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                        </span>${playlist.quadrant}</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/span&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                    </span>${playlist.icon}</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="playlist-info"&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="playlist-title"&gt;${playlist.title}&lt;/h3&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="playlist-desc"&gt;${playlist.description}&lt;/p&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;a href="${playlist.url}" target="_blank" class="btn-open" style="color: ${playlist.accent_color}; border: 2px solid ${playlist.accent_color};"&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                        </span>Abrir Canal</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>`;</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">            </span>grid.appendChild(card);</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></li>
-  <li class="li1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></li>
-  <li class="li1"><span class="s1">&lt;/body&gt;</span></li>
-  <li class="li1"><span class="s1">&lt;/html&gt;</span></li>
-</ul>
+
+    <header>
+        <h1>Distrito 110 // <span>Playlists</span></h1>
+    </header>
+
+    <div class="grid-container" id="playlist-grid"></div>
+
+    <!-- Vinculación directa a tu script unificado de Aisha con las 4 playlists -->
+    <script src="script.js"></script>
 </body>
 </html>
