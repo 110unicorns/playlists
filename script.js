@@ -2,7 +2,7 @@
 const playlistData = {
   "project_metadata": {
     "project_name": "Distrito_110_Playlists",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "last_updated": "2026-06-22"
   },
   "playlists": [
@@ -21,7 +21,7 @@ const playlistData = {
       "quadrant": "Mito-Blanco",
       "description": "Ambientes relajantes, música orgánica, fractales y pasajes acústicos.",
       "icon": "🌲",
-      "accent_color": "#ffffff",
+      "accent_color": "#66fcf1",
       "url": "#"
     },
     {
@@ -30,7 +30,7 @@ const playlistData = {
       "quadrant": "Fuego-Rojo",
       "description": "Ritmos intensos, guitarras pesadas, impulsos Tesla y pura energía.",
       "icon": "🔥",
-      "accent_color": "#ff3333",
+      "accent_color": "#66fcf1",
       "url": "#"
     },
     {
@@ -39,7 +39,7 @@ const playlistData = {
       "quadrant": "Fuego-Rojo",
       "description": "Set personal de mezcla (110-130 BPM). Incluye tracks de Farruko, Tiësto y Daddy Yankee.",
       "icon": "🎛️",
-      "accent_color": "#ff5722",
+      "accent_color": "#66fcf1",
       "url": "https://music.youtube.com/playlist?list=PLfH6E8CyLWtyZtkoOu73T2RNcVSTmFRGx"
     }
   ]
@@ -49,18 +49,15 @@ const playlistData = {
 function renderPlaylists() {
     const grid = document.getElementById('playlist-grid');
     
-    // Validar si el contenedor existe en el DOM antes de operar
     if (!grid) return;
 
-    // Limpiar contenedor por si hay elementos antiguos
     grid.innerHTML = '';
 
     playlistData.playlists.forEach(playlist => {
-        // 1. Crear el contenedor de la tarjeta
         const card = document.createElement('div');
         card.className = 'playlist-card';
         
-        // 2. Control dinámico de los estilos interactivos por cuadrante
+        // Control dinámico de los estilos interactivos en Azul
         card.addEventListener('mouseenter', () => {
             card.style.borderColor = playlist.accent_color;
             card.style.boxShadow = `0 10px 20px ${playlist.accent_color}1e`;
@@ -71,7 +68,6 @@ function renderPlaylists() {
             card.style.boxShadow = 'none';
         });
 
-        // 3. Inyección del template HTML orgánico
         card.innerHTML = `
             <div class="cover-art">
                 <span class="quadrant-tag" style="color: ${playlist.accent_color}; border-color: ${playlist.accent_color}44;">
@@ -90,10 +86,8 @@ function renderPlaylists() {
             </div>
         `;
         
-        // 4. Acoplar la tarjeta al grid principal
         grid.appendChild(card);
     });
 }
 
-// Ejecutar el renderizado una vez que el DOM esté completamente cargado y estable
 document.addEventListener('DOMContentLoaded', renderPlaylists);
